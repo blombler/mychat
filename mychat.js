@@ -46,33 +46,4 @@ function addMessage(message) {
 
 app.listen(5555);
 
-/*
-
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  var userIp = req.connection.remoteAddress;
-
-  var message =  getMessage(req);
-  if (message.length == 0)  {
-    res.end('<html><p>blomblers Chat</p></html>');
-    return;
-  }
-
-  if (userIp == "192.168.178.39") {
-
-    addMessage(message);
-
-    res.end(createResponse(messages));
-  } else if (userIp == "192.168.178.66" || userIp == "192.168.178.65") {
-    // blombler
-    var message =  getMessage(req);
-    addMessage(message);
-    res.end(createResponse(messages));
-  } else {
-    res.end('Unknown user');
-  }
-
-
-
-}).listen(5555, '192.168.178.65');*/
 console.log('Heute : Ready');
