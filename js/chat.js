@@ -1,3 +1,5 @@
+var getMessagesIntervalId;
+
 $(function() {
   var getMessages = function() {
     $.ajax({
@@ -11,20 +13,23 @@ $(function() {
           chatArea.html("");
           for (var i = 0; i < data.messages.length; i++) {
             var message = data.messages[i];
-            var messageTime = new Date(data.messageTime[i]);
+            var username = data.messageUsers[i];
+            var messageTime = new Date(data.messageTimes[i]);
             var hours = messageTime.getHours();
             var minutes = messageTime.getMinutes();
             var seconds = messageTime.getSeconds();
             minutes = pad(minutes,2,"0");
             seconds = pad(seconds,2,"0");
             var timeString = " [" + hours + ":" + minutes + ":" + seconds + "] ";
-            chatArea.append("<li>" + timeString + message +"</li>");
+            var usernameString = "[" + username + "]  ";
+            chatArea.append("<li>" + usernameString + timeString + message +"</li>");
           }
         }
       },
       error: function() {
-        //alert("error");
-        console.log("Error occurred.");
+        console.log("clearinterval",getMessagesIntervalId)
+        window.clearInterval(getMessagesIntervalId);
+        document.location.reload(true);
       }
     })
   };
@@ -35,9 +40,11 @@ $(function() {
     return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
   }
 
-  setInterval(getMessages, 1000);
+  getMessagesIntervalId = window.setInterval(getMessages, 500);
+  console.log("intervalId:",getMessagesIntervalId);
 
   var chatInput = $("#chat_input");
+  chatInput.focus();
   chatInput.keypress(function(event) {
     if (event.which == 13) {
       sendInputToServer();
@@ -59,7 +66,9 @@ $(function() {
         chatInput.val("");
       },
       error: function() {
-        alert("error");
+        console.log("clearinterval",getMessagesIntervalId)
+        window.clearInterval(getMessagesIntervalId);
+        document.location.reload(true);
       }
     })
   };
