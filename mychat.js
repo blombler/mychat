@@ -75,4 +75,4 @@ http.createServer(function (req, res) {
 
 
 }).listen(5555, '192.168.178.65');*/
-console.log('Heute : Rady');
+console.log('Heute : Ready');
