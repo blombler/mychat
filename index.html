@@ -3,13 +3,21 @@
     <title>blombler's Chat</title>
     <script src="/jquery"></script>
     <script src="/chat"></script>
-
+    <link rel="stylesheet" href="/css" ></link>
   </head>
   <body>
-    <p><b>blomblers Chat</b></p>
-    <ul id="chat_area">
-
-    </ul>
-    <input id="chat_input" type='text' placeholder="Schreib hier..." value=""></input><button id="send_button">Senden</button>
+    <header class="chat_header">
+      <div>
+        <img class="logo" src="blombler.png"/>
+      </div>
+      <div class="title">
+         blomblers Chat
+      </div>
+    </header>
+    <div>
+      <ul id="chat_area">
+      </ul>
+      <input id="chat_input" type='text' placeholder="Schreib hier..." value=""></input><button id="send_button">Senden</button>
+    </div>
   </body>
 </html>

@@ -26,8 +26,14 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(appDir, 'login.html'));
 });
 
+app.use(express.static('img'));
+
 app.get('/jquery', function(req, res) {
     res.sendFile(path.join(appDir, 'node_modules/jquery/dist/jquery.min.js'));
+});
+
+app.get('/css', function(req, res) {
+    res.sendFile(path.join(appDir, 'css/styles.css'));
 });
 
 app.get('/chat', function(req, res) {
