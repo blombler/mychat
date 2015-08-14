@@ -9,7 +9,7 @@ var messages = [];
 var messageTimes = [];
 var messageUsers = [];
 var amountMessageLimit = 10;
-// {ip:"192.168.0.1",username:"Timbnl"}
+// {ip:"192.168.0.1",username:"Tim"}
 var chatUsers = [];
 
 app.enable('trust proxy');
