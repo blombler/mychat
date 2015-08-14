@@ -1,0 +1,28 @@
+{
+  "name": "mychat",
+  "version": "1.0.0",
+  "description": "blombler's chat",
+  "main": "mychat.js",
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blombler/mychat.git"
+  },
+  "keywords": [
+    "blombler",
+    "chat"
+  ],
+  "author": "Tim Blombler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blombler/mychat/issues"
+  },
+  "homepage": "https://github.com/blombler/mychat#readme"
+}
